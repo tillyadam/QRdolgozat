@@ -51,7 +51,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String text = textView_eredmeny.getText().toString();
-                if (writePermission) {
+                if (textView_eredmeny.length()==0){
+                    Toast toast = Toast.makeText(getApplicationContext(), "Nincs mit kiírni", Toast.LENGTH_SHORT);
+                    toast.show();
+                }else if (writePermission) {
                     try {
                         kiiras.kiir(text);
                         textView_eredmeny.setText("");
