@@ -55,6 +55,8 @@ public class MainActivity extends AppCompatActivity {
                     try {
                         kiiras.kiir(text);
                         textView_eredmeny.setText("");
+                        Toast toast = Toast.makeText(getApplicationContext(), "Sikeres kiírás", Toast.LENGTH_SHORT);
+                        toast.show();
                     } catch (IOException e) {
                         Log.d("Kiírás", e.getMessage());
                         e.printStackTrace();
